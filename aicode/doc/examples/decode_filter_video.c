@@ -312,6 +312,7 @@ int main(int argc, char **argv)
                     if (ret < 0)
                         goto end;
                     display_frame(filt_frame, buffersink_ctx->inputs[0]->time_base);
+		    printf("ts=%8" PRId64 ",%8" PRId64 "\n",frame->best_effort_timestamp,frame->duration);			
                     av_frame_unref(filt_frame);
                 }
                 av_frame_unref(frame);
