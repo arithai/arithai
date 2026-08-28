@@ -28,6 +28,8 @@
 *_g
 *.mp3
 *.mp4
+db.php
+dbx.php
 \#*
 .\#*
 /.config
