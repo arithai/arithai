@@ -330,7 +330,7 @@ print $title;
 </title>
 </head>
 <body background=<?php print $udir."/back0.gif" ?>
-<a href=https://youtu.be/k1HZZykRExs>最新資訊2026.08.22[</a><?php echo $_SERVER['SERVER_NAME']; ?>][
+<a href=https://youtu.be/k1HZZykRExs>最新資訊2026.08.28[</a><?php echo $_SERVER['SERVER_NAME']; ?>][
 <?php $s=$_SERVER['HTTP_HOST'];$sp="http://".$s."/accounting-software-php/admin/";
 echo "<a href='".$sp."'>$sp</a>&nbsp;&nbsp;"; 
 if( isset( $_SERVER['REQUEST_URI'] ) ) echo "<<".$_SERVER['REQUEST_URI'].">>"; 
