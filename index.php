@@ -329,12 +329,14 @@ print $title;
 ?>,屋價網,無價網,物價網,五價網,開價,訂價,出價,售價,成交價,成本價,2026
 </title>
 </head>
-<body background=<?php print $udir."/back0.gif" ?>
-<a href=https://youtu.be/k1HZZykRExs>最新資訊2026.08.28[</a><?php echo $_SERVER['SERVER_NAME']; ?>][
-<?php $s=$_SERVER['HTTP_HOST'];$sp="http://".$s."/accounting-software-php/admin/";
-echo "<a href='".$sp."'>$sp</a>&nbsp;&nbsp;"; 
-if( isset( $_SERVER['REQUEST_URI'] ) ) echo "<<".$_SERVER['REQUEST_URI'].">>"; 
-?>]
+<body background=<?php print $udir."/back0.gif" ?>>
+<a href='https://youtu.be/h2NBq_XTGbo'>最新資訊2026.08.29</a>[<?php echo $_SERVER['SERVER_NAME']; ?>]
+<?php $s=$_SERVER['HTTP_HOST'];
+//$sp="http://".$s."/accounting-software-php/admin/";
+$sp="species2.php";
+echo "<a href='".$sp."'[>$sp]</a>&nbsp;&nbsp;"; 
+if( isset( $_SERVER['REQUEST_URI'] ) ) echo "[ ".$_SERVER['REQUEST_URI']." ]"; 
+?>
 
 <div id="sfcs5julx2kdxaf3xay4t9kwy8zj2se7yl7"></div> 
 <script type="text/javascript" src="https://counter8.optistats.ovh/private/counter.js?c=s5julx2kdxaf3xay4t9kwy8zj2se7yl7&down=async" async>
@@ -353,7 +355,8 @@ function upload_back() {
   global $globals,$isShow,$isShowStr,$udir; 
   $isShow=true;
   $isShowStr="";
-  $uploaddir = "./".$udir."/"; 
+  $uploaddir = "./".$udir."/";
+//echo "uploaddir($uploaddir)";
   $dir = opendir($uploaddir); 
   $isExist=false;
 //$files = array(); 
@@ -372,18 +375,19 @@ function upload_back() {
     $globals['attachement'] = $_POST['attachement_loos']; 
   }
   if(isset($_FILES['attachement']) && !empty($_FILES['attachement']['name'])) { 
-    echo "Size of ".$_FILES['attachement']['name']." is ".$_FILES['attachement']['size']." bytes. <br>\n";
+    $t=$_FILES['attachement']['type'];
+    echo "type(".$t.",".strpos($t,'image/')."),Size of ".$_FILES['attachement']['name']." is ".$_FILES['attachement']['size']." bytes. <br>\n";
     if ($_FILES['attachement']['size'] > 300000) {
       echo "The uploaded file is large!<br>\n"; 
     }
     else 
-    if(!eregi('image/', $_FILES['attachement']['type']) &&
-       !eregi('audio/', $_FILES['attachement']['type']) &&
-       !eregi('text/', $_FILES['attachement']['type'])
+//  if(!eregi('image/', $_FILES['attachement']['type']) &&
+//     !eregi('audio/', $_FILES['attachement']['type']) &&
+//     !eregi('text/', $_FILES['attachement']['type'])
+//  if(!str_contains($t,"image/") && !str_contains($t,"audio/") && !str_contains($t,"text/") 
+    if(is_int(strpos($t,"image/")) || is_int(strpos($t,"audio/")) || is_int(stripos($t,"text/")) 
     ) { 
-      echo "The uploaded file is not accepted.<br>\n"; //$_FILES['attachement']['type']; 
-    } else { 
-      //echo "file".$file." ...".$_FILES['attachement']['name']."<br>\n"; 
+    //echo "file".$file." ...".$_FILES['attachement']['name']."<br>\n"; 
       if($isExist) {
         echo "The name of the uploaded file is duplicate!<br>\n"; 
       }
@@ -391,6 +395,7 @@ function upload_back() {
       //$_FILES['attachement']['name'] = ceil(count($files)+'1').''.strrchr($_FILES['attachement']['name'], '.'); 
       //$uploadfile = $uploaddir . basename($_FILES['attachement']['name']); 
         $uploadfile = $uploaddir . basename($file); 
+      //echo "[uploadfile/$uploadfile]";
         $previousToDestroy = empty($globals['attachement']) && !empty($file) ? '' : $uploaddir . $files[ceil(count($files)-'1')]; 
         if(!move_uploaded_file($_FILES['attachement']['tmp_name'], $uploadfile)) { 
 echo '<pre> 
@@ -407,12 +412,14 @@ here are your debug informations:
         $globals['attachement'] = $file; 
         if(!empty($previousToDestroy)) { unlink($previousToDestroy); } 
       }
+    } else { 
+      echo "The uploaded file is not accepted.<br>\n"; //$_FILES['attachement']['type']; 
     } 
   } 
 } 
 //if($_POST['fun']=="upload") { echo "exit"; exit; }
 if ($isman && $fun=='upload') {
-  echo "upload back";
+//echo "upload back";
   upload_back(); 
   if($isShow) echo $isShowStr;
 }
