@@ -54,12 +54,13 @@ class SitemapGenerator
 	// Recursive function that crawls a page's anchor tags and store them in the scanned array.
 	private function crawlPage($page_url)
 	{
+        echo "[100]url[$url]\n";
         
 		$url = filter_var($page_url, FILTER_SANITIZE_URL);
 
 		// Check if the url is invalid or if the page is already scanned;
 	//	if (in_array($url, $this->scanned) || !filter_var($page_url, FILTER_VALIDATE_URL)) {
-		if (in_array($url, $this->scanned)) {
+		if (in_array($url, $this->scanned) || is_int(strpos($url,"php"))) {
 			return;
 		}
 
@@ -67,15 +68,17 @@ class SitemapGenerator
 		array_push($this->scanned, $page_url);
 
 		// Get the html content from the 
-        echo "url[$url]\n";
+        echo "[200]url[$url]\n";
 		$html = $this->getHtml($url);
-      //echo "html[$html]\n";
+        echo "[300]url[$url]\n";
+     //echo "html[$html]\n";
 		$anchors = $html->getElementsByTagName('a');
-
+        echo "[400]url[$url]\n";
 		// Loop through all anchor tags on the page
 		foreach ($anchors as $a) {
+            echo "[500]url[$url]\n";
 			$next_url = $a->getAttribute('href');
-            echo "next_url[$next_url]\n";
+            echo "[600]url[$url]next_url[$next_url]\n";
 			// Check if there is a anchor ID set in the config.
 			if ($this->config['CRAWL_ANCHORS_WITH_ID'] != "") {
 				// Check if the id is set and matches the config setting, else it will move on to the next anchor

@@ -3,8 +3,9 @@
 return array(
     // Site to crawl and create a sitemap for.
     // <Syntax> https://www.your-domain-name.com/ or http://www.your-domain-name.com/
-    // "SITE_URL" => "http://localhost/arith.online/index.html",
-    "SITE_URL" => "https://arithai.github.io/arith/index.html",
+    //"SITE_URL" => "http://localhost/",
+    "SITE_URL" => "http://localhost/arith.online/index.html",
+    //"SITE_URL" => "https://arithai.github.io/arith/index.html",
 
     // Boolean for crawling external links.
     // <Example> *Domain = https://www.student-laptop.nl* , *Link = https://www.google.com* <When false google will not be crawled>

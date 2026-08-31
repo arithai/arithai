@@ -221,7 +221,7 @@ else
 </a><!a href='http://www.e-zeeinternet.com/' title='HTML Hit Counter' target='_blank' 
 style='font-family: Geneva, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000; text-decoration: none;'>HTML Hit Counter
 </a><!-- Counter Code END --><img src=a5.gif alt='Guest Book' border=0>
-<a href='/page/guestbook.php'>-討論區<font size=+3>GuestBook</a></a><br>"
+<a href='page/guestbook.php'>-討論區<font size=+3>GuestBook</a></a><br>"
 ;
 
       if($isGen==1) { 
@@ -266,7 +266,7 @@ style='font-family: Geneva, Arial, Helvetica, sans-serif; font-size: 10px; color
 Free Counter</a><!-- Counter Code END -->
 &nbsp;
 <img src=a5.gif alt='Guest Book' border=0>
-<a href='/page/guestbook.php'>-討論區GuestBook</a><br>"
+<a href='page/guestbook.php'>-討論區GuestBook</a><br>"
 ;
 
       if($isGen==1) { 

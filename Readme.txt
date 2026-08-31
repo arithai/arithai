@@ -1,4 +1,23 @@
-﻿use mysql;
+﻿
+//2026.08.30
+C:\tools\mysql-5.0.96-winx64
+最後進
+
+mysql -h 127.0.0.1 -u root -p111111
+mysqldump -h 127.0.0.1 -u root -p111111 mysql SpeciesMain SpeciesYoutube > Species.sql
+sitemap-config.php
+php gensmap.php a b c
+/usr/sbin/apachectl restart
+mysqldump -h 127.0.0.1 -u root -p111111 mysql SpeciesMain,SpeciesYoutube > Species.sql
+mysqldump -h 127.0.0.1 -u root -p111111 mysql SpeciesYoutube  > SpeciesYoutube.sql
+mysqldump -h 127.0.0.1 -u root -p111111 mysql SpeciesMain  > SpeciesMain.sql
+cd "C:\Program Files\MySQL\MySQL Server 5.5\bin\"
+https://www.youtube.com/watch?v=eqyhUwU95-E&t=727s
+
+//species2.php
+//sitemap-generator.php
+
+use mysql;
 ALTER DATABASE mysql DEFAULT COLLATE utf8_unicode_ci;
 ALTER DATABASE mysql DEFAULT COLLATE utf8mb4;
 ALTER DATABASE mysql DEFAULT COLLATE COLLATE big5_chinese_ci;
